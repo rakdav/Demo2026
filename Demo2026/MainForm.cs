@@ -15,6 +15,8 @@ namespace Demo2026
         public MainForm()
         {
             InitializeComponent();
+            labelUser.Text=Form1.User.LastName+" "+Form1.User.FirstName.Substring(0,1)+"."
+               +Form1.User.MiddleName.Substring(0,1)+".";
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)

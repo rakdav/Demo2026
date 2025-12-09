@@ -5,6 +5,7 @@ namespace Demo2026
     public partial class Form1 : Form
     {
         public static Form1 Instance;
+        public static User User { get; set; }
         public Form1()
         {
             InitializeComponent();
@@ -17,6 +18,7 @@ namespace Demo2026
                 User user = db.Users.FirstOrDefault(p => p.Login == textBoxLogin.Text)!;
                 if (user != null)
                 {
+                    User= user;
                     if (user.Password == textBoxPassword.Text)
                     {
                         MainForm form = new MainForm();
