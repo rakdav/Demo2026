@@ -18,9 +18,9 @@ namespace Demo2026
         public MainForm()
         {
             InitializeComponent();
-            labelUser.Text=Form1.User.LastName+" "+Form1.User.FirstName.Substring(0,1)+"."
-               +Form1.User.MiddleName.Substring(0,1)+".";
-            db=new Demo11Context();
+            labelUser.Text = Form1.User.LastName + " " + Form1.User.FirstName.Substring(0, 1) + "."
+               + Form1.User.MiddleName.Substring(0, 1) + ".";
+            db = new Demo11Context();
             UpdateForm();
         }
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -35,10 +35,15 @@ namespace Demo2026
             foreach (Order order in list)
             {
                 UserControlOrder uc = new UserControlOrder(order, this);
-                uc.Top=y;
+                uc.Top = y;
                 panel1.Controls.Add(uc);
-                y+=uc.Height;
+                y += uc.Height;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

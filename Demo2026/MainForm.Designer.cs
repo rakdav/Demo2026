@@ -30,6 +30,7 @@
         {
             labelUser = new Label();
             panel1 = new Panel();
+            button1 = new Button();
             SuspendLayout();
             // 
             // labelUser
@@ -51,11 +52,22 @@
             panel1.Size = new Size(566, 450);
             panel1.TabIndex = 1;
             // 
+            // button1
+            // 
+            button1.Location = new Point(580, 370);
+            button1.Name = "button1";
+            button1.Size = new Size(208, 23);
+            button1.TabIndex = 2;
+            button1.Text = "Добавить";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(panel1);
             Controls.Add(labelUser);
             Name = "MainForm";
@@ -68,5 +80,6 @@
 
         private Label labelUser;
         private Panel panel1;
+        private Button button1;
     }
 }
