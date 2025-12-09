@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             labelUser = new Label();
+            panel1 = new Panel();
             SuspendLayout();
             // 
             // labelUser
             // 
-            labelUser.Anchor = AnchorStyles.Right;
             labelUser.Font = new Font("Segoe UI", 14F);
             labelUser.Location = new Point(580, 9);
             labelUser.Name = "labelUser";
@@ -42,11 +42,21 @@
             labelUser.Text = "label1";
             labelUser.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // panel1
+            // 
+            panel1.AutoScroll = true;
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(566, 450);
+            panel1.TabIndex = 1;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(panel1);
             Controls.Add(labelUser);
             Name = "MainForm";
             Text = "Главная";
@@ -57,5 +67,6 @@
         #endregion
 
         private Label labelUser;
+        private Panel panel1;
     }
 }
