@@ -35,8 +35,8 @@
             textBoxSuplier = new TextBox();
             textBoxManufactor = new TextBox();
             textBoxCategory = new TextBox();
-            textBox8 = new TextBox();
-            textBox9 = new TextBox();
+            textBoxCount = new TextBox();
+            textBoxDescription = new TextBox();
             pictureBox1 = new PictureBox();
             button1 = new Button();
             groupBox1 = new GroupBox();
@@ -104,20 +104,22 @@
             textBoxCategory.Size = new Size(296, 23);
             textBoxCategory.TabIndex = 6;
             // 
-            // textBox8
+            // textBoxCount
             // 
-            textBox8.Location = new Point(165, 333);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(143, 23);
-            textBox8.TabIndex = 8;
+            textBoxCount.Location = new Point(165, 333);
+            textBoxCount.Name = "textBoxCount";
+            textBoxCount.PlaceholderText = "Введите остаток";
+            textBoxCount.Size = new Size(143, 23);
+            textBoxCount.TabIndex = 8;
             // 
-            // textBox9
+            // textBoxDescription
             // 
-            textBox9.Location = new Point(12, 375);
-            textBox9.Multiline = true;
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(296, 111);
-            textBox9.TabIndex = 9;
+            textBoxDescription.Location = new Point(12, 375);
+            textBoxDescription.Multiline = true;
+            textBoxDescription.Name = "textBoxDescription";
+            textBoxDescription.PlaceholderText = "Введите описание";
+            textBoxDescription.Size = new Size(296, 111);
+            textBoxDescription.TabIndex = 9;
             // 
             // pictureBox1
             // 
@@ -148,6 +150,7 @@
             // 
             // button3
             // 
+            button3.DialogResult = DialogResult.Cancel;
             button3.Location = new Point(151, 26);
             button3.Name = "button3";
             button3.Size = new Size(115, 64);
@@ -157,6 +160,7 @@
             // 
             // button2
             // 
+            button2.DialogResult = DialogResult.OK;
             button2.Location = new Point(20, 26);
             button2.Name = "button2";
             button2.Size = new Size(111, 64);
@@ -180,8 +184,8 @@
             Controls.Add(groupBox1);
             Controls.Add(button1);
             Controls.Add(pictureBox1);
-            Controls.Add(textBox9);
-            Controls.Add(textBox8);
+            Controls.Add(textBoxDescription);
+            Controls.Add(textBoxCount);
             Controls.Add(textBoxCategory);
             Controls.Add(textBoxManufactor);
             Controls.Add(textBoxSuplier);
@@ -203,7 +207,6 @@
         private TextBox textBox4;
         private TextBox textBox5;
         private TextBox textBox7;
-        private TextBox textBox8;
         private TextBox textBox9;
         private PictureBox pictureBox1;
         private Button button1;
@@ -217,6 +220,8 @@
         public TextBox textBoxSuplier;
         public TextBox textBoxManufactor;
         public TextBox textBoxCategory;
-        private NumericUpDown numericUpDown1;
+        public NumericUpDown numericUpDown1;
+        public TextBox textBoxCount;
+        public TextBox textBoxDescription;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Demo2026.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ namespace Demo2026
 {
     public partial class FormOrder : Form
     {
-        public FormOrder()
+        public FormOrder(Order order)
         {
             InitializeComponent();
         }

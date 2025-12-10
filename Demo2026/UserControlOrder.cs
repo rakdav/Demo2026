@@ -42,7 +42,7 @@ namespace Demo2026
                 }
                 label7.Text = "Единица измерения:" + order.UnitMeasure;
                 label8.Text = "Количество на складе:" + order.Count;
-                if (order.Photo != "")
+                if (order.Photo != ""&&order.Photo!=null)
                 {
                     pictureBox1.Image = Image.FromFile(Environment.CurrentDirectory +
                         @"\Photo\" + order.Photo);

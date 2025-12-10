@@ -21,16 +21,17 @@ namespace Demo2026
             labelUser.Text = Form1.User.LastName + " " + Form1.User.FirstName.Substring(0, 1) + "."
                + Form1.User.MiddleName.Substring(0, 1) + ".";
             db = new Demo11Context();
-            UpdateForm();
+            list = db.Orders.ToList();
+            UpdateForm(list);
         }
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Form1.Instance.Show();
         }
-        private void UpdateForm()
+        public void UpdateForm(List<Order> list)
         {
+            //обновление формы
             panel1.Controls.Clear();
-            list = db.Orders.ToList();
             int y = 0;
             foreach (Order order in list)
             {
@@ -43,7 +44,64 @@ namespace Demo2026
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //добавление элемента
+            FormOrder formAdd = new FormOrder(new Order());
+            if (formAdd.ShowDialog() == DialogResult.OK)
+            {
+                Order order = new Order();
+                order.Articul = formAdd.textBoxArticul.Text;
+                order.Name = formAdd.textBoxName.Text;
+                order.UnitMeasure = formAdd.textBoxUM.Text;
+                order.Price = decimal.Parse(formAdd.textBoxPrice.Text);
+                order.Suplier = formAdd.textBoxSuplier.Text;
+                order.Manufacture = formAdd.textBoxManufactor.Text;
+                order.Category = formAdd.textBoxCategory.Text;
+                order.Discount = int.Parse(formAdd.numericUpDown1.Value.ToString());
+                order.Count = int.Parse(formAdd.textBoxCount.Text);
+                order.Description = formAdd.textBoxDescription.Text;
+                db.Orders.Add(order);
+                db.SaveChanges();
+                UpdateForm(db.Orders.ToList());
+            }
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex != -1)
+            {
+                switch (comboBox1.SelectedIndex)
+                {
+                    case 0:
+                        list = db.Orders.OrderBy(p => p.Articul).ToList();
+                        break;
+                    case 1:
+                        list = db.Orders.OrderBy(p => p.Name).ToList();
+                        break;
+                    case 2:
+                        list = db.Orders.OrderBy(p => p.UnitMeasure).ToList();
+                        break;
+                    case 3:
+                        list = db.Orders.OrderBy(p => p.Price).ToList();
+                        break;
+                    case 4:
+                        list = db.Orders.OrderBy(p => p.Suplier).ToList();
+                        break;
+                    case 5:
+                        list = db.Orders.OrderBy(p => p.Manufacture).ToList();
+                        break;
+                    case 6:
+                        list = db.Orders.OrderBy(p => p.Category).ToList();
+                        break;
+                    case 7:
+                        list = db.Orders.OrderBy(p => p.Discount).ToList();
+                        break;
+                    case 8:
+                        list = db.Orders.OrderBy(p => p.Count).ToList();
+                        break;
+                }
+                UpdateForm(list);
+            }
         }
     }
 }
