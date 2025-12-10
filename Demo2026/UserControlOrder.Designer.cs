@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlOrder));
+            components = new System.ComponentModel.Container();
             pictureBox1 = new PictureBox();
-            groupBox1 = new GroupBox();
-            pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
@@ -42,65 +39,27 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            удалитьToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
             // 
+            pictureBox1.Dock = DockStyle.Left;
             pictureBox1.Image = Properties.Resources.picture;
-            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(150, 144);
+            pictureBox1.Size = new Size(150, 150);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(pictureBox3);
-            groupBox1.Controls.Add(pictureBox2);
-            groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(156, 3);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(310, 144);
-            groupBox1.TabIndex = 1;
-            groupBox1.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.BackColor = Color.DodgerBlue;
-            pictureBox3.Location = new Point(235, 108);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(32, 28);
-            pictureBox3.TabIndex = 9;
-            pictureBox3.TabStop = false;
-            pictureBox3.Click += pictureBox3_Click;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(273, 108);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(31, 28);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 8;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click;
-            // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(134, 90);
+            label9.Location = new Point(280, 94);
             label9.Name = "label9";
             label9.Size = new Size(38, 15);
             label9.TabIndex = 7;
@@ -110,7 +69,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(7, 126);
+            label8.Location = new Point(159, 132);
             label8.Name = "label8";
             label8.Size = new Size(38, 15);
             label8.TabIndex = 6;
@@ -119,7 +78,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(6, 108);
+            label7.Location = new Point(159, 114);
             label7.Name = "label7";
             label7.Size = new Size(38, 15);
             label7.TabIndex = 5;
@@ -128,7 +87,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(7, 86);
+            label6.Location = new Point(159, 94);
             label6.Name = "label6";
             label6.Size = new Size(38, 15);
             label6.TabIndex = 4;
@@ -137,7 +96,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(7, 66);
+            label5.Location = new Point(159, 72);
             label5.Name = "label5";
             label5.Size = new Size(38, 15);
             label5.TabIndex = 3;
@@ -146,7 +105,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(7, 47);
+            label4.Location = new Point(159, 43);
             label4.Name = "label4";
             label4.Size = new Size(38, 15);
             label4.TabIndex = 2;
@@ -155,7 +114,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(7, 30);
+            label3.Location = new Point(159, 18);
             label3.Name = "label3";
             label3.Size = new Size(38, 15);
             label3.TabIndex = 1;
@@ -165,7 +124,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label2.Location = new Point(7, 11);
+            label2.Location = new Point(159, 3);
             label2.Name = "label2";
             label2.Size = new Size(40, 15);
             label2.TabIndex = 0;
@@ -173,35 +132,55 @@
             // 
             // label1
             // 
+            label1.Dock = DockStyle.Right;
             label1.Font = new Font("Segoe UI", 16F);
-            label1.Location = new Point(472, 3);
+            label1.Location = new Point(475, 0);
             label1.Name = "label1";
-            label1.Size = new Size(85, 144);
+            label1.Size = new Size(85, 150);
             label1.TabIndex = 2;
             label1.Text = "label1";
             label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { удалитьToolStripMenuItem });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(119, 26);
+            // 
+            // удалитьToolStripMenuItem
+            // 
+            удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
+            удалитьToolStripMenuItem.Size = new Size(118, 22);
+            удалитьToolStripMenuItem.Text = "Удалить";
+            удалитьToolStripMenuItem.Click += удалитьToolStripMenuItem_Click;
             // 
             // UserControlOrder
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            ContextMenuStrip = contextMenuStrip1;
             Controls.Add(label1);
-            Controls.Add(groupBox1);
+            Controls.Add(label8);
+            Controls.Add(label9);
+            Controls.Add(label7);
             Controls.Add(pictureBox1);
+            Controls.Add(label2);
+            Controls.Add(label3);
+            Controls.Add(label6);
+            Controls.Add(label4);
+            Controls.Add(label5);
             Name = "UserControlOrder";
             Size = new Size(560, 150);
+            DoubleClick += UserControlOrder_DoubleClick;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private PictureBox pictureBox1;
-        private GroupBox groupBox1;
         private Label label8;
         private Label label7;
         private Label label6;
@@ -211,7 +190,7 @@
         private Label label2;
         private Label label1;
         private Label label9;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem удалитьToolStripMenuItem;
     }
 }

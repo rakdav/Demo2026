@@ -38,6 +38,8 @@ namespace Demo2026
         public void UpdateForm(List<Order> list)
         {
             //обновление формы
+            textBox1.Text = "";
+            comboBox1.SelectedIndex = -1;
             panel1.Controls.Clear();
             int y = 0;
             foreach (Order order in list)

@@ -23,7 +23,7 @@ namespace Demo2026
             this.mainForm = _form;
             try
             {
-                if (order.Discount > 15) groupBox1.BackColor = Color.Green;
+                if (order.Discount > 15) this.BackColor = Color.Green;
                 label1.Text = order.Discount.ToString();
                 label2.Text = order.Category + " | " + order.Name;
                 label3.Text = "Описание товара:" + order.Description;
@@ -55,7 +55,7 @@ namespace Demo2026
             }
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show($"Вы хотите удалить элемент {order.Name}", "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
@@ -69,20 +69,27 @@ namespace Demo2026
             }
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void UserControlOrder_DoubleClick(object sender, EventArgs e)
         {
             FormOrder form = new FormOrder(order);
             if (form.ShowDialog() == DialogResult.OK)
             {
-                order.UnitMeasure=form.textBoxUM.Text;
-                order.Manufacture=form.textBoxManufactor.Text;
-                order.Category=form.textBoxCategory.Text;
-                order.Price=decimal.Parse(form.textBoxPrice.Text);
-                order.Count=int.Parse(form.textBoxCount.Text);
-                order.Suplier=form.textBoxSuplier.Text;
-                order.Description=form.textBoxDescription.Text;
-                order.Discount=int.Parse(form.numericUpDown1.Value.ToString());
-                order.Name=form.textBoxName.Text;
+                order.UnitMeasure = form.textBoxUM.Text;
+                order.Manufacture = form.textBoxManufactor.Text;
+                order.Category = form.textBoxCategory.Text;
+                order.Price = decimal.Parse(form.textBoxPrice.Text);
+                order.Count = int.Parse(form.textBoxCount.Text);
+                order.Suplier = form.textBoxSuplier.Text;
+                order.Description = form.textBoxDescription.Text;
+                order.Discount = int.Parse(form.numericUpDown1.Value.ToString());
+                order.Name = form.textBoxName.Text;
+                if (form.FilePath != null)
+                {
+                    FileInfo file = new FileInfo(form.FilePath);
+                    file.CopyTo(Environment.CurrentDirectory +
+                        @"\Photo\" + form.FileName, true);
+                    order.Photo = form.FileName;
+                }
                 using (Demo11Context db = new Demo11Context())
                 {
                     db.Orders.Update(order);
