@@ -23,12 +23,13 @@ namespace Demo2026
             db = new Demo11Context();
             list = db.Orders.ToList();
             UpdateForm(list);
-            if(Form1.User.Role== "Авторизированный клиент")
+            if(Form1.User.Role=="Авторизированный клиент")
             {
                 textBox1.Visible=false;
                 label2.Visible=false;
                 label1.Visible=false;
                 comboBox1.Visible=false;
+                button1.Visible=false;
             }
         }
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
