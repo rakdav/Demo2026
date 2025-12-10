@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Demo2026
 {
@@ -34,23 +35,46 @@ namespace Demo2026
                     label6.ForeColor = Color.Red;
                 }
                 label6.Text = "Цена:" + order.Price;
-                if(order.Discount>0)
+                if (order.Discount > 0)
                 {
                     label9.Visible = true;
                     decimal price = (decimal)(1 - (order.Discount / 100.0)) * order.Price;
-                    label9.Text =price.ToString("F2"); 
+                    label9.Text = price.ToString("F2");
                 }
                 label7.Text = "Единица измерения:" + order.UnitMeasure;
                 label8.Text = "Количество на складе:" + order.Count;
-                if (order.Photo != ""&&order.Photo!=null)
+                if (order.Photo != "" && order.Photo != null)
                 {
                     pictureBox1.Image = Image.FromFile(Environment.CurrentDirectory +
                         @"\Photo\" + order.Photo);
                 }
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show($"Вы хотите удалить элемент {order.Name}", "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                using (Demo11Context db = new Demo11Context())
+                {
+                    db.Orders.Remove(order);
+                    db.SaveChanges();
+                    mainForm.UpdateForm(db.Orders.ToList());
+                }
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            FormOrder form = new FormOrder(order);
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+
             }
         }
     }

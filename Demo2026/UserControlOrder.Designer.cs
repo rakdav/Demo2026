@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlOrder));
             pictureBox1 = new PictureBox();
             groupBox1 = new GroupBox();
+            pictureBox3 = new PictureBox();
+            pictureBox2 = new PictureBox();
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
@@ -41,6 +44,8 @@
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -55,6 +60,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(pictureBox3);
+            groupBox1.Controls.Add(pictureBox2);
             groupBox1.Controls.Add(label9);
             groupBox1.Controls.Add(label8);
             groupBox1.Controls.Add(label7);
@@ -69,10 +76,31 @@
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             // 
+            // pictureBox3
+            // 
+            pictureBox3.BackColor = Color.DodgerBlue;
+            pictureBox3.Location = new Point(235, 108);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(32, 28);
+            pictureBox3.TabIndex = 9;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(273, 108);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(31, 28);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 8;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
+            // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(188, 90);
+            label9.Location = new Point(134, 90);
             label9.Name = "label9";
             label9.Size = new Size(38, 15);
             label9.TabIndex = 7;
@@ -165,6 +193,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -181,5 +211,7 @@
         private Label label2;
         private Label label1;
         private Label label9;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
     }
 }
