@@ -30,6 +30,7 @@
         {
             pictureBox1 = new PictureBox();
             groupBox1 = new GroupBox();
+            label9 = new Label();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -54,6 +55,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(label9);
             groupBox1.Controls.Add(label8);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(label6);
@@ -66,6 +68,16 @@
             groupBox1.Size = new Size(310, 144);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(188, 90);
+            label9.Name = "label9";
+            label9.Size = new Size(38, 15);
+            label9.TabIndex = 7;
+            label9.Text = "label9";
+            label9.Visible = false;
             // 
             // label8
             // 
@@ -168,5 +180,6 @@
         private Label label3;
         private Label label2;
         private Label label1;
+        private Label label9;
     }
 }

@@ -28,81 +28,81 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            domainUpDown1 = new DomainUpDown();
+            textBoxArticul = new TextBox();
+            textBoxName = new TextBox();
+            textBoxUM = new TextBox();
+            textBoxPrice = new TextBox();
+            textBoxSuplier = new TextBox();
+            textBoxManufactor = new TextBox();
+            textBoxCategory = new TextBox();
             textBox8 = new TextBox();
             textBox9 = new TextBox();
             pictureBox1 = new PictureBox();
             button1 = new Button();
             groupBox1 = new GroupBox();
-            button2 = new Button();
             button3 = new Button();
+            button2 = new Button();
+            numericUpDown1 = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
-            // textBox1
+            // textBoxArticul
             // 
-            textBox1.Location = new Point(12, 12);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(296, 23);
-            textBox1.TabIndex = 0;
+            textBoxArticul.Location = new Point(12, 12);
+            textBoxArticul.Name = "textBoxArticul";
+            textBoxArticul.PlaceholderText = "Введите артикул";
+            textBoxArticul.Size = new Size(296, 23);
+            textBoxArticul.TabIndex = 0;
             // 
-            // textBox2
+            // textBoxName
             // 
-            textBox2.Location = new Point(12, 54);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(296, 23);
-            textBox2.TabIndex = 1;
+            textBoxName.Location = new Point(12, 54);
+            textBoxName.Name = "textBoxName";
+            textBoxName.PlaceholderText = "Введите название";
+            textBoxName.Size = new Size(296, 23);
+            textBoxName.TabIndex = 1;
             // 
-            // textBox3
+            // textBoxUM
             // 
-            textBox3.Location = new Point(12, 99);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(296, 23);
-            textBox3.TabIndex = 2;
+            textBoxUM.Location = new Point(12, 99);
+            textBoxUM.Name = "textBoxUM";
+            textBoxUM.PlaceholderText = "Введите единицу измерения";
+            textBoxUM.Size = new Size(296, 23);
+            textBoxUM.TabIndex = 2;
             // 
-            // textBox4
+            // textBoxPrice
             // 
-            textBox4.Location = new Point(12, 140);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(296, 23);
-            textBox4.TabIndex = 3;
+            textBoxPrice.Location = new Point(12, 140);
+            textBoxPrice.Name = "textBoxPrice";
+            textBoxPrice.PlaceholderText = "Введите цену";
+            textBoxPrice.Size = new Size(296, 23);
+            textBoxPrice.TabIndex = 3;
             // 
-            // textBox5
+            // textBoxSuplier
             // 
-            textBox5.Location = new Point(12, 187);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(296, 23);
-            textBox5.TabIndex = 4;
+            textBoxSuplier.Location = new Point(12, 187);
+            textBoxSuplier.Name = "textBoxSuplier";
+            textBoxSuplier.PlaceholderText = "Введите поставщика";
+            textBoxSuplier.Size = new Size(296, 23);
+            textBoxSuplier.TabIndex = 4;
             // 
-            // textBox6
+            // textBoxManufactor
             // 
-            textBox6.Location = new Point(12, 233);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(296, 23);
-            textBox6.TabIndex = 5;
+            textBoxManufactor.Location = new Point(12, 233);
+            textBoxManufactor.Name = "textBoxManufactor";
+            textBoxManufactor.PlaceholderText = "Введите производителя";
+            textBoxManufactor.Size = new Size(296, 23);
+            textBoxManufactor.TabIndex = 5;
             // 
-            // textBox7
+            // textBoxCategory
             // 
-            textBox7.Location = new Point(12, 285);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(296, 23);
-            textBox7.TabIndex = 6;
-            // 
-            // domainUpDown1
-            // 
-            domainUpDown1.Location = new Point(12, 332);
-            domainUpDown1.Name = "domainUpDown1";
-            domainUpDown1.Size = new Size(120, 23);
-            domainUpDown1.TabIndex = 7;
-            domainUpDown1.Text = "domainUpDown1";
+            textBoxCategory.Location = new Point(12, 285);
+            textBoxCategory.Name = "textBoxCategory";
+            textBoxCategory.PlaceholderText = "Введите категорию";
+            textBoxCategory.Size = new Size(296, 23);
+            textBoxCategory.TabIndex = 6;
             // 
             // textBox8
             // 
@@ -146,15 +146,6 @@
             groupBox1.TabIndex = 12;
             groupBox1.TabStop = false;
             // 
-            // button2
-            // 
-            button2.Location = new Point(20, 26);
-            button2.Name = "button2";
-            button2.Size = new Size(111, 64);
-            button2.TabIndex = 0;
-            button2.Text = "Сохранить";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
             button3.Location = new Point(151, 26);
@@ -164,42 +155,54 @@
             button3.Text = "Отмена";
             button3.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            button2.Location = new Point(20, 26);
+            button2.Name = "button2";
+            button2.Size = new Size(111, 64);
+            button2.TabIndex = 0;
+            button2.Text = "Сохранить";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Location = new Point(12, 332);
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(120, 23);
+            numericUpDown1.TabIndex = 13;
+            // 
             // FormOrder
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(639, 498);
+            Controls.Add(numericUpDown1);
             Controls.Add(groupBox1);
             Controls.Add(button1);
             Controls.Add(pictureBox1);
             Controls.Add(textBox9);
             Controls.Add(textBox8);
-            Controls.Add(domainUpDown1);
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxCategory);
+            Controls.Add(textBoxManufactor);
+            Controls.Add(textBoxSuplier);
+            Controls.Add(textBoxPrice);
+            Controls.Add(textBoxUM);
+            Controls.Add(textBoxName);
+            Controls.Add(textBoxArticul);
             Name = "FormOrder";
             Text = "Добавление товара";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private TextBox textBox1;
         private TextBox textBox2;
-        private TextBox textBox3;
         private TextBox textBox4;
         private TextBox textBox5;
-        private TextBox textBox6;
         private TextBox textBox7;
-        private DomainUpDown domainUpDown1;
         private TextBox textBox8;
         private TextBox textBox9;
         private PictureBox pictureBox1;
@@ -207,5 +210,13 @@
         private GroupBox groupBox1;
         private Button button3;
         private Button button2;
+        public TextBox textBoxArticul;
+        public TextBox textBoxName;
+        public TextBox textBoxUM;
+        public TextBox textBoxPrice;
+        public TextBox textBoxSuplier;
+        public TextBox textBoxManufactor;
+        public TextBox textBoxCategory;
+        private NumericUpDown numericUpDown1;
     }
 }

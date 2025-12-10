@@ -34,6 +34,12 @@ namespace Demo2026
                     label6.ForeColor = Color.Red;
                 }
                 label6.Text = "Цена:" + order.Price;
+                if(order.Discount>0)
+                {
+                    label9.Visible = true;
+                    decimal price = (decimal)(1 - (order.Discount / 100.0)) * order.Price;
+                    label9.Text =price.ToString("F2"); 
+                }
                 label7.Text = "Единица измерения:" + order.UnitMeasure;
                 label8.Text = "Количество на складе:" + order.Count;
                 if (order.Photo != "")
