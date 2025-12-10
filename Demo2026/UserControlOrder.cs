@@ -74,7 +74,21 @@ namespace Demo2026
             FormOrder form = new FormOrder(order);
             if (form.ShowDialog() == DialogResult.OK)
             {
-
+                order.UnitMeasure=form.textBoxUM.Text;
+                order.Manufacture=form.textBoxManufactor.Text;
+                order.Category=form.textBoxCategory.Text;
+                order.Price=decimal.Parse(form.textBoxPrice.Text);
+                order.Count=int.Parse(form.textBoxCount.Text);
+                order.Suplier=form.textBoxSuplier.Text;
+                order.Description=form.textBoxDescription.Text;
+                order.Discount=int.Parse(form.numericUpDown1.Value.ToString());
+                order.Name=form.textBoxName.Text;
+                using (Demo11Context db = new Demo11Context())
+                {
+                    db.Orders.Update(order);
+                    db.SaveChanges();
+                    mainForm.UpdateForm(db.Orders.ToList());
+                }
             }
         }
     }

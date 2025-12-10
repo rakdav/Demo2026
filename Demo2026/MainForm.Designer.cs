@@ -62,7 +62,7 @@
             button1.Name = "button1";
             button1.Size = new Size(208, 23);
             button1.TabIndex = 2;
-            button1.Text = "7";
+            button1.Text = "Добавить";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 

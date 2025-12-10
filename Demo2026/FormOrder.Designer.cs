@@ -43,6 +43,7 @@
             button3 = new Button();
             button2 = new Button();
             numericUpDown1 = new NumericUpDown();
+            openFileDialog1 = new OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
@@ -137,6 +138,7 @@
             button1.TabIndex = 11;
             button1.Text = "Загрузить";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // groupBox1
             // 
@@ -174,6 +176,10 @@
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(120, 23);
             numericUpDown1.TabIndex = 13;
+            // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
             // 
             // FormOrder
             // 
@@ -223,5 +229,6 @@
         public NumericUpDown numericUpDown1;
         public TextBox textBoxCount;
         public TextBox textBoxDescription;
+        private OpenFileDialog openFileDialog1;
     }
 }

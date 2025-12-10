@@ -66,6 +66,13 @@ namespace Demo2026
                 order.Discount = int.Parse(formAdd.numericUpDown1.Value.ToString());
                 order.Count = int.Parse(formAdd.textBoxCount.Text);
                 order.Description = formAdd.textBoxDescription.Text;
+                if (formAdd.FilePath != null)
+                {
+                    FileInfo file= new FileInfo(formAdd.FilePath);
+                    file.CopyTo(Environment.CurrentDirectory +
+                        @"\Photo\" + formAdd.FileName, true);
+                    order.Photo = formAdd.FileName;
+                }
                 db.Orders.Add(order);
                 db.SaveChanges();
                 UpdateForm(db.Orders.ToList());
