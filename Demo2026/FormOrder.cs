@@ -28,6 +28,11 @@ namespace Demo2026
             textBoxSuplier.Text = order.Suplier;
             numericUpDown1.Value = order.Discount;
             textBoxUM.Text = order.UnitMeasure;
+            if (order.Photo != "" && order.Photo != null)
+            {
+                pictureBox1.Image=Image.FromFile(Environment.CurrentDirectory +
+                        @"\Photo\"+order.Photo);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
